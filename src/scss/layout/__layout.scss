@@ -4,6 +4,13 @@
     background-color: var(--color-grey-light-2);
     box-shadow: var(--shadow-dark);
     min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+
+    }
 }
 
 .header {
@@ -14,10 +21,20 @@
     height: 7rem;
     background-color: #fff;
     border-bottom: 1px solid var(--color-grey-light-2);
+    
+    @media only screen and (max-width: $bp-smallest) {
+        height: 11rem;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
 }
 
 .content {
     display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }    
 }
 
 .sidebar {
@@ -38,6 +55,17 @@
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
     font-size: 1.4rem;
+
+    
+    @media only screen and (max-width: $bp-medium) {
+        justify-content: center;
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+   
 }
 
 .description {
@@ -46,6 +74,17 @@
     padding: 3rem;
     flex: 0 0 60%;
     margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        justify-content: center;
+        margin-right: 3rem;
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .user-reviews {
@@ -53,3 +92,4 @@
     flex-direction: column;    
     flex: 1;
 }
+
