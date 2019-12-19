@@ -220,9 +220,16 @@ body {
   color: var(--color-primary);
   background-color: transparent;
   transition: all .2s;
-  cursor: pointer; }
+  cursor: pointer;
+  align-self: center; }
+  .btn-inline span {
+    transition: margin-left .2s;
+    margin-left: 3px; }
   .btn-inline:hover, .btn-inline:active {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span, .btn-inline:active span {
+      color: var(--color-grey-dark-1);
+      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -280,6 +287,50 @@ body {
     .recommend__photo:not(:last-of-type) {
       margin-right: -1.15rem; }
 
+.review {
+  background-color: #fff;
+  padding: 3rem;
+  box-shadow: var(--shadow-dark);
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden; }
+  .review::before {
+    z-index: 1;
+    content: "\201C";
+    position: absolute;
+    top: -2rem;
+    left: -.5rem;
+    line-height: 1;
+    font-size: 20rem;
+    font-family: sans-serif;
+    color: var(--color-grey-light-3); }
+  .review__text {
+    position: relative;
+    z-index: 10; }
+  .review__user {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center; }
+  .review__user-photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%; }
+  .review__user-box {
+    margin-left: 1rem; }
+  .review__user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+    text-transform: uppercase; }
+  .review__user-date {
+    font-size: 1rem;
+    color: var(--color-grey-dark-3); }
+  .review__rating {
+    font-size: 2.25rem;
+    color: var(--color-primary);
+    margin-left: auto;
+    font-weight: 300; }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -313,16 +364,17 @@ body {
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
-  border-bottom: var(--line); }
+  border-bottom: var(--line);
+  font-size: 1.4rem; }
 
 .description {
   background-color: #fff;
-  font-size: 1.4rem;
   box-shadow: var(--shadow-dark);
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 4.5rem; }
 
 .user-reviews {
-  background-color: yellowgreen;
+  display: flex;
+  flex-direction: column;
   flex: 1; }
