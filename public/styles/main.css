@@ -9,7 +9,9 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3); }
+  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+  --line: 1px solid var(--color-grey-light-2)
+; }
 
 * {
   margin: 0;
@@ -167,7 +169,7 @@ body {
   height: 7rem;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-3);
+  border-bottom: var(--line);
   background-color: #fff; }
   .overview__heading {
     font-size: 2.25rem;
@@ -236,6 +238,48 @@ body {
     transform: scale(1);
     box-shadow: none; } }
 
+.par:not(:last-of-type) {
+  margin-bottom: 2rem; }
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line); }
+  .list__item {
+    margin-bottom: .7rem;
+    flex: 0 0 50%; }
+    .list__item::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: .7rem;
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../images/SVG/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../images/SVG/chevron-thin-right.svg);
+      mask-size: cover; }
+
+.recommend {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .recommend__friends {
+    margin-left: auto; }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff; }
+    .recommend__photo:not(:last-of-type) {
+      margin-right: -1.15rem; }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -263,5 +307,22 @@ body {
   background-color: var(--color-grey-dark-1); }
 
 .hotel-view {
-  height: 70rem;
+  flex: 1; }
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line); }
+
+.description {
+  background-color: #fff;
+  font-size: 1.4rem;
+  box-shadow: var(--shadow-dark);
+  padding: 3rem;
+  flex: 0 0 60%;
+  margin-right: 4.5rem; }
+
+.user-reviews {
+  background-color: yellowgreen;
   flex: 1; }
